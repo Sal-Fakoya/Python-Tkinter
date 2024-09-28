@@ -28,18 +28,53 @@ btn = Button(master, option = value)
         flash: causes the button to flash
         invoke: calls the button's callback
 
+                                Callback Function:
+        arg* command = some_function_name
+        OR button.config(command=some_function)
+
+
 """
 from tkinter import *
 from tkinter import ttk
 
 root = Tk()
+def callback():
+    print("A button was clicked!")
 
-button = ttk.Button(master = root,
-                    text = "Button #1")
+button = ttk.Button(master=root,
+                    text="Click Me",
+                    command=callback)
+
+button1 = Button(master=root,
+                 text="Click another me",
+                 relief=SUNKEN)
+
+button.config(command=callback)
+
+for i in range(5):
+    button.invoke()
+
+button1.place(x=50, y=50)
 
 button.pack() # adjusts button to the screen
 
-root.mainloop() # runs the code on the root window
+path = "C:\\Users\\fakoy\Text_to_Audio_App\\tutorial_on_tkinter"
+logo = PhotoImage(file=f"{path}\\sakomoto_days.jpg")
+button.config(image=logo, compound=LEFT)
+#
+#
+x = logo.subsample(7, 7)
+button.config(image=x)
+
+button.state(['disabled'])
+button_state = button.instate(['disabled'])
+print(button_state)
+
+button_state1 = button.instate(["!disabled"])
+print(button_state1)
+
+root.mainloop()
+# runs the code on the root window
 
 
 

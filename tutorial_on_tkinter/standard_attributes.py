@@ -42,10 +42,10 @@
 
 from tkinter import *
 root = Tk()
-b1 = Button(master=root, text="sunken_button", relief=SUNKEN, bitmap="error")
+b1 = Button(master=root, text="sunken_button", cursor="circle")
 b1.place(x=10, y =10)
 
-b2 = Button(master=root, text="groove", relief=GROOVE, bitmap="hourglass")
+b2 = Button(master=root, text="groove", relief=GROOVE, bitmap="hourglass", cursor="plus")
 b2.place(x=20, y =40)
 
 b2 = Button(master=root, text="ridge", relief=RIDGE, bitmap="questhead")
