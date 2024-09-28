@@ -24,9 +24,6 @@
 
 --> Anchors: are used to define where text is positioned relative to a reference point:
         NW, N, NE, W, CENTER, E, SW, S, SE
-
--->
-
 """
 
 
