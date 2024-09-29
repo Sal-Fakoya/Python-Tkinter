@@ -46,10 +46,12 @@ def press(num):
     expression += str(num)
     equation.set(expression)
 
+
 def resize(event):
     new_size = min(event.width // 10, event.height // 10)
-    for button in buttons:
-        button.config(font=("Helvetica", new_size))
+    for button_x in buttons:
+        button_x.config(font=("Helvetica", new_size))
+
 
 if __name__ == "__main__":
     root = Tk()
@@ -98,7 +100,7 @@ if __name__ == "__main__":
     history_button = Button(master=root, text="Show History", fg="white",
                             bg="#0099F0", command=toggle_history, height=3, width=8)
     history_button.grid(row=5, column=2, columnspan=2, padx=5, pady=5, sticky="nsew")
-2
+
     # Configure grid weights to make widgets expand
     for i in range(7):
         root.grid_rowconfigure(i, weight=1)
