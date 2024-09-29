@@ -1,4 +1,4 @@
-# Tkinter_Projects
+# Python: Tkinter Folder
 
 ## Contents:
   This folder contains:
