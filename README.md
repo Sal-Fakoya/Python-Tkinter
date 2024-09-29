@@ -14,11 +14,13 @@
      3. Cab booking App
 
          #### Calculator App: 
-        In the `Calculator_App` folder, there is a `Calculator_App_V2.py` script.
-          - The `Calculator_App_V2.py` is a simple arithmetic calculator app made in python using tkinter library.
+        The `Calculator_App` folder has a `Calculator_App_V2.py` script.
+          - The `Calculator_App_V2.py` is a simple arithmetic calculator app made in Python using Tkinter library.
           - It collects and evaluates expressions using the buttons in the calculator.
           - Operations it can perform include addition, subtraction, multiplication, and division.
-          - It can also clear the calculator screen and show history. The history is a scrollable listbox in x and y directions.
+          - It can also clear the calculator screen and show history. The history is a scrollable Listbox in x and y directions.
+          - The calculator is expandable, meaning the widgets and text sizes on the buttons increase
+              when the window size is increased or maximized as desired.
         
      ### 2. Tkinter tutorial
      Tkinter tutorial folder contains scripts on tkinter lessons: including tkinter widgets and commands.
