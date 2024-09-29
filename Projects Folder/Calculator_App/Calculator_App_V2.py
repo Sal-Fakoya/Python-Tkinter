@@ -1,3 +1,10 @@
+# This is a Calculator application using python : and tkinter library
+"""
+1. Import necessary library
+2. Create the driver code: set the GUI window, configurations, title and geometry for the main GUI window
+3. The expression field and buttons
+"""
+
 from tkinter import *
 
 # Initialize history and visibility flag
@@ -26,7 +33,11 @@ def equalpress():
     try:
         global expression
         total = str(eval(expression))
+
+        # set expression = "" after calculating total
         equation.set(total)
+
+        # append total to history
         history.append(f"{expression} = {total}")
         update_history()
         expression = ""
@@ -52,16 +63,25 @@ def resize(event):
     for button_x in buttons:
         button_x.config(font=("Helvetica", new_size))
 
-
+# create the driver. This helps us regulate the code and everything here is executed first.
 if __name__ == "__main__":
+
+    # configure root window of the application
     root = Tk()
     root.configure(background="#55BDF0")
+
+    # set title of the application
     root.title("Calculator Application")
+
+    # set the geometry of the application
     root.geometry("300x400")
 
+    # set the expression field
     equation = StringVar()
     expression = ""
     expression_field = Entry(master=root, textvariable=equation, bd=5)
+
+    # place the expression field in grid-like structure
     expression_field.grid(row=0, column=0, columnspan=4, ipadx=8, ipady=8, padx=10, pady=10, sticky="nsew")
     equation.set("Enter your expression: ")
 
