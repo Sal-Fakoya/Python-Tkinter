@@ -13,6 +13,9 @@
      2. Text to Audio App
      3. Cab booking App
 
+         #### Calculator App: 
+        Go to `Calculator_App` folder. 
+
      ### 2. Tkinter tutorial
      Tkinter tutorial folder contains scripts on tkinter lessons: including tkinter widgets and commands.
 
