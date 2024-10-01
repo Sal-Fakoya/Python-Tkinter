@@ -11,7 +11,12 @@ import threading
 continue_speaking = True
 
 
+
 def extract_text():
+    """
+    extract_text(): extracts texts from PDF pages
+    parameters: 
+    """
     global text_extracted
 
     file = filedialog.askopenfile(parent=root, mode="rb", title="Choose a PDF File: ")
@@ -27,6 +32,10 @@ def extract_text():
 
 
 def speak_text():
+    """
+    speak_text(): sets the read voice to male and female voice, and has a subfunction
+    parameter: 
+    """
     global continue_speaking
 
     rate_value = int(rate.get())
@@ -47,17 +56,27 @@ def speak_text():
 
     continue_speaking = True
 
+    
     def run_speech():
+        """
+        run_speech(): controls speaking upon play button 
+        parameter: 
+        """
         for line in text_extracted.split('\n'):
             if not continue_speaking:
                 break
             engine.say(line)
             engine.runAndWait()
 
+    # create a new thread object for the run_speech function with .start() method
+    # so that the program can play again when the audio stopped and played again
     threading.Thread(target=run_speech).start()
 
 
 def stop_speaking():
+    """
+    stop_speaking(): controls the stop playing button. 
+    """
     global continue_speaking
     print("Stop button pressed")
     continue_speaking = False
@@ -65,6 +84,11 @@ def stop_speaking():
 
 
 def Application(root):
+    """
+    Application(root): is the function for the GUI of the App. Takes the "root" Tk() window as an argument.
+    parameter: root
+    """
+    
     global rate, male, female
 
     root.geometry("700x600")
@@ -116,6 +140,7 @@ def Application(root):
     stop_btn.grid(row=4, column=1, pady=65)
 
 
+# Create the driver for the application to set up the window. This function will always run first.
 if __name__ == '__main__':
     text_extracted = ""
     engine = pyttsx3.init()
